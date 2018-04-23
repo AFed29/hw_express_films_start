@@ -28,4 +28,10 @@ filmsRouter.put('/:id', function (req, res) {
   res.json({ films: filmsData.all() })
 });
 
+filmsRouter.delete('/:id', function (req, res) {
+  const index = req.params.id;
+  filmsData.delete(index);
+  res.json({ films: filmsData.all() })
+});
+
 module.exports = filmsRouter;
